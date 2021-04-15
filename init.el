@@ -10,13 +10,16 @@
 ;; Add melpa to your packages repositories
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
-;; (package-refresh-contents)
-;;(package-install 'intero)
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
 ;; Use-package for civilized configuration
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 (require 'use-package)
 (setq use-package-always-ensure t)
+
 ;; Set customization data in a specific file, without littering
 ;; my init files.
 (setq custom-file "~/.emacs.d/custom.el")
