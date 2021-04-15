@@ -9,12 +9,11 @@
 ;; auto close bracket insertion
 (electric-pair-mode 1)
 
-;; Bind f12 to indent-buffer
 (defun indent-buffer ()
   (interactive)
   (save-excursion
     (indent-region (point-min) (point-max) nil)))
-(global-set-key [f12] 'indent-buffer)
+;; (global-set-key [f12] 'indent-buffer)
 
 (require 'package)
 ;; Add melpa to your packages repositories
@@ -115,9 +114,10 @@
 
 (use-package flycheck)
 (use-package rustic
-  ;; :config
+  :config
   ;; (setq rustic-format-on-save t)
   ;; (add-hook 'rustic-mode-hook 'rk/rustic-mode-hook)
+  (global-set-key [f12] 'rustic-format-buffer)
 )
 (defun rk/rustic-mode-hook ()
   ;; so that run C-c C-c C-r works without having to confirm
