@@ -6,6 +6,9 @@
 (menu-bar-mode 1)
 ;; disable tool bar
 (tool-bar-mode -1)
+;; auto close bracket insertion
+(electric-pair-mode 1)
+
 (require 'package)
 ;; Add melpa to your packages repositories
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -104,7 +107,15 @@
 ;; ----------------------------- rust config -----------------------
 
 (use-package flycheck)
-(use-package rustic)
+(use-package rustic
+  :config
+  (setq rustic-format-on-save t)
+  (add-hook 'rustic-mode-hook 'rk/rustic-mode-hook)
+)
+(defun rk/rustic-mode-hook ()
+  ;; so that run C-c C-c C-r works without having to confirm
+  (setq-local buffer-save-without-query t))
+
 (use-package lsp-ui)
 (use-package helm-lsp
   :config
