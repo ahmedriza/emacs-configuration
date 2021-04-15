@@ -1,0 +1,9 @@
+*~
+.lsp-session-*
+.cache
+auto-save-list
+snippets
+recentf
+custom.el
+/.dap-breakpoints
+/.extension/
