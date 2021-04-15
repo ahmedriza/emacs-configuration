@@ -80,6 +80,12 @@
 (setq lsp-enable-file-watchers nil)
 (setq treemacs-no-png-images t)
 
+;; ----------------------------- magit -----------------------
+
+(use-package magit
+  :config
+  (global-set-key (kbd "C-c m") 'magit-status))
+
 ;; ----------------------------- intero for Haskell -----------------------
 
 ;; Install Intero
@@ -89,13 +95,10 @@
 
 (cond
  ((member "Monaco" (font-family-list))
-  (set-face-attribute 'default nil :font "Monaco-12"))
- ((member "Inconsolata" (font-family-list))
-  (set-face-attribute 'default nil :font "Inconsolata-12"))
- ((member "Consolas" (font-family-list))
-  (set-face-attribute 'default nil :font "Consolas-11"))
- ((member "DejaVu Sans Mono" (font-family-list))
-  (set-face-attribute 'default nil :font "DejaVu Sans Mono-10")))
+  (set-face-attribute 'default nil :font "Monaco-11")) ((member "Inconsolata" (font-family-list))
+  (set-face-attribute 'default nil :font "Inconsolata-11")) ((member "Consolas" (font-family-list))
+  (set-face-attribute 'default nil :font "Consolas-10")) ((member "DejaVu Sans Mono" (font-family-list))
+  (set-face-attribute 'default nil :font "DejaVu Sans Mono-9")))
 
 
 ;; ----------------------------- rust config -----------------------
