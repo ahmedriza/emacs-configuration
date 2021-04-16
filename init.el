@@ -1,6 +1,9 @@
 ;; Some of the settings are inspired by
 ;; https://people.gnome.org/~federico/blog/bringing-my-emacs-from-the-past.html
 ;;
+;; For LSP, see also:
+;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
+;;
 ;; work around bug where dynamically generated menus are blank
 (menu-bar-mode -1)
 (menu-bar-mode 1)
@@ -136,7 +139,34 @@
   ;; so that run C-c C-c C-r works without having to confirm
   (setq-local buffer-save-without-query t))
 
-(use-package lsp-ui)
+(use-package lsp-mode
+  :ensure
+  :commands lsp
+  :custom
+  ;; what to use when checking on-save. "check" is default, I prefer clippy
+  (lsp-rust-analyzer-cargo-watch-command "clippy")
+  ;; hide sideline code actions
+  (lsp-ui-sideline-show-code-actions nil)
+  ;; (lsp-eldoc-enable-hover nil)
+  (lsp-signature-render-documentation nil)
+  ;; (lsp-eldoc-render-all nil)
+  ;; (lsp-idle-delay 0.6)
+  ;; (lsp-rust-analyzer-server-display-inlay-hints nil)
+  (lsp-headerline-breadcrumb-enable nil)
+  :config
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+  )
+
+; (use-package lsp-ui)
+(use-package lsp-ui
+  :ensure
+  :commands lsp-ui-mode
+  ;; :custom
+  ;; (lsp-ui-peek-always-show nil)
+  ;; (lsp-ui-sideline-show-hover nil)
+  ;; (lsp-ui-doc-enable nil)
+  )
+
 (use-package helm-lsp
   :config
   (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
