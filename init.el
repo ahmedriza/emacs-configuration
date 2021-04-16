@@ -11,6 +11,7 @@
 (tool-bar-mode -1)
 ;; auto close bracket insertion
 (electric-pair-mode 1)
+(column-number-mode t)
 
 (defun indent-buffer ()
   (interactive)
@@ -109,7 +110,8 @@
 
 (use-package magit
   :config
-  (global-set-key (kbd "C-c m") 'magit-status))
+  (global-set-key (kbd "C-x g") 'magit-status)
+  (setq magit-refresh-status-buffer nil))
 
 ;; ----------------------------- intero for Haskell -----------------------
 
@@ -139,7 +141,7 @@
               ("C-c C-c r" . lsp-rename)
               ("C-c C-c q" . lsp-workspace-restart)
               ("C-c C-c Q" . lsp-workspace-shutdown)
-              ("C-c C-c s" . lsp-rust-analyzer-status)
+              ("C-c C-c s" . lsp-rust-analyzer-status))
   :config
   ;; (setq rustic-format-on-save t)
   ;; (add-hook 'rustic-mode-hook 'rk/rustic-mode-hook)
