@@ -1,10 +1,14 @@
-;; Some of the settings are inspired by
-;; https://people.gnome.org/~federico/blog/bringing-my-emacs-from-the-past.html
-;;
-;; For LSP, see also:
-;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
-;;
-;; work around bug where dynamically generated menus are blank
+;;; package --- Summary
+;;; init.el
+;;; Commentary:
+;;; Some of the settings are inspired by
+;;; https://people.gnome.org/~federico/blog/bringing-my-emacs-from-the-past.html
+;;;
+;;; For LSP, see also:
+;;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
+;;;
+;;; work around bug where dynamically generated menus are blank
+;;; Code:
 (menu-bar-mode -1)
 (menu-bar-mode 1)
 ;; disable tool bar
@@ -12,6 +16,15 @@
 ;; auto close bracket insertion
 (electric-pair-mode 1)
 (column-number-mode t)
+
+;; (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+(global-display-fill-column-indicator-mode)
+(setq-default display-fill-column-indicator-column 100)
+;; (setq display-fill-column-indicator-character ?\N{U+2506})
+;; (setq-default display-fill-column-indicator-character ?\N{U+2506})
+;; (setq-default display-fill-column-indicator-character ?\N{U+250A})
+;; (setq-default display-fill-column-indicator-character ?\N{U+254E})
+;; (customize-face 'fill-column-indicator)
 
 (defun indent-buffer ()
   (interactive)
@@ -103,10 +116,6 @@
   (lsp-mode . dap-mode)
   (lsp-mode . dap-ui-mode)
   )
-
-;; (use-package fill-column-indicator)
-;; (add-hook 'after-change-major-mode-hook 'fci-mode)
-;; (setq fci-rule-column 80)
 
 (global-display-line-numbers-mode)
 (setq frame-resize-pixelwise t)
