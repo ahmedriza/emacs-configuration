@@ -42,6 +42,19 @@
   (which-key-setup-side-window-bottom)
   (setq which-key-idle-delay 0.1))
 
+(use-package selectrum
+  :ensure
+  :init
+  (selectrum-mode)
+  :custom
+  (completion-styles '(flex substring partial-completion)))
+
+(fset 'yes-or-no-p 'y-or-n-p)
+(recentf-mode 1)
+(setq recentf-max-saved-items 100
+      inhibit-startup-message t
+      ring-bell-function 'ignore)
+
 ;; Enable defer and ensure by default for use-package
 ;; Keep auto-save/backup files separate from source code:  https://github.com/scalameta/metals/issues/1027
 (setq use-package-always-defer t
