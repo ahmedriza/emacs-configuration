@@ -38,6 +38,15 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+;; move buffers between windows
+(use-package buffer-move
+  :config
+  (global-set-key (kbd "<C-S-up>") 'buf-move-up)
+  (global-set-key (kbd "<C-S-down>") 'buf-move-down)
+  (global-set-key (kbd "<C-S-left>") 'buf-move-left)
+  (global-set-key (kbd "<C-S-right>") 'buf-move-right)
+  )
+
 ;; Which-key to get hints when typing command prefixes
 (use-package which-key
   :diminish
