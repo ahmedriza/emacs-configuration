@@ -99,8 +99,6 @@
 (use-package flycheck
   :init (global-flycheck-mode))
 
-;; (setq treemacs-toggle-fixed-width t)
-(setq treemacs-width 50)
 
 ;; lsp-mode supports snippets, but in order for them to work you need to use yasnippet
 ;; If you don't want to use snippets set lsp-enable-snippet to nil in your lsp-mode settings
@@ -124,12 +122,20 @@
 (use-package xclip)
 (xclip-mode 1)
 
-(global-set-key [f8] 'treemacs)
-
 (setq debug-on-error t)
 
+(global-set-key [f8] 'treemacs)
 (setq lsp-enable-file-watchers nil)
 (setq treemacs-no-png-images t)
+;; (setq treemacs-toggle-fixed-width t)
+(setq treemacs-width 50)
+(when window-system
+  (use-package treemacs
+  :config
+  (set-face-attribute 'treemacs-root-face nil
+                        :foreground (face-attribute 'default :foreground)
+                        :height 1.0
+                        :weight 'normal)))
 
 ;; ----------------------------- magit -----------------------
 
