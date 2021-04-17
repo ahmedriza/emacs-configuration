@@ -128,7 +128,7 @@
 (setq lsp-enable-file-watchers nil)
 (setq treemacs-no-png-images t)
 ;; (setq treemacs-toggle-fixed-width t)
-(setq treemacs-width 50)
+(setq treemacs-width 35)
 (when window-system
   (use-package treemacs
   :config
@@ -267,5 +267,10 @@
 ;; for Cargo.toml and other config files
 (use-package toml-mode :ensure)
 
-;; ----------------------------- end rust config -----------------------
+;; ----------------------------- rest client -----------------------
 
+;; https://emacs.stackexchange.com/questions/2427/how-to-test-rest-api-with-emacs
+;; https://github.com/pashky/restclient.el
+(require 'restclient)
+
+;;
