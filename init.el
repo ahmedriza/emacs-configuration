@@ -267,6 +267,17 @@
 ;; for Cargo.toml and other config files
 (use-package toml-mode :ensure)
 
+;; ----------------------------- org mode and babel-----------------
+
+;; active Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((http . t)
+   (shell . t)))
+
+;; for Markdown export support
+(require 'ox-md)
+
 ;; ----------------------------- rest client -----------------------
 
 ;; https://emacs.stackexchange.com/questions/2427/how-to-test-rest-api-with-emacs
