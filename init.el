@@ -172,7 +172,9 @@
               ("C-c C-c r" . lsp-rename)
               ("C-c C-c q" . lsp-workspace-restart)
               ("C-c C-c Q" . lsp-workspace-shutdown)
-              ("C-c C-c s" . lsp-rust-analyzer-status))
+              ("C-c C-c s" . lsp-rust-analyzer-status)
+              ("C-c C-c t" . lsp-goto-implementation)
+              )
   :config
   ;; (setq rustic-format-on-save t)
   ;; (add-hook 'rustic-mode-hook 'rk/rustic-mode-hook)
