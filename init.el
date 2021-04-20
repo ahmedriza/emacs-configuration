@@ -279,6 +279,9 @@
 
 ;; for Markdown export support
 (require 'ox-md)
+(use-package ox-hugo
+  :ensure t ;; auto install from melpa
+  :after ox)
 
 ;; ----------------------------- rest client -----------------------
 
