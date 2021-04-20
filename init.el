@@ -128,7 +128,7 @@
 (setq lsp-enable-file-watchers nil)
 (setq treemacs-no-png-images t)
 ;; (setq treemacs-toggle-fixed-width t)
-(setq treemacs-width 35)
+(setq treemacs-width 55)
 (when window-system
   (use-package treemacs
   :config
