@@ -17,6 +17,10 @@
 (electric-pair-mode 1)
 (column-number-mode t)
 
+;; open buffers in read-only mode by default
+;; toggle with C-x C-q
+(add-hook 'find-file-hook (lambda () (setq buffer-read-only t)))
+
 ;; (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 (global-display-fill-column-indicator-mode)
 (setq-default display-fill-column-indicator-column 100)
