@@ -271,6 +271,10 @@
 
 ;; ----------------------------- org mode and babel-----------------
 
+;; turn off electric-indent-mode in org-mode as it does some really
+;; weird things to indentation
+(add-hook 'org-mode-hook (lambda () (electric-indent-mode -1)))
+
 ;; active Babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
