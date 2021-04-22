@@ -297,4 +297,12 @@
 ;; https://github.com/pashky/restclient.el
 (require 'restclient)
 
-;;
+;; ----------------------------- highlights ------------------------
+
+(use-package hl-todo
+  :ensure t
+  :config
+  (define-key hl-todo-mode-map (kbd "C-c p") 'hl-todo-previous)
+  (define-key hl-todo-mode-map (kbd "C-c n") 'hl-todo-next)
+  :hook ((prog-mode . hl-todo-mode)))
+
