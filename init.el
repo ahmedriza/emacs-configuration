@@ -64,6 +64,13 @@
 
 ;; ------------------ some global configs -------------------------
 
+(global-set-key (kbd "C-x 1")
+  (lambda ()
+  (interactive)
+  (if (yes-or-no-p (concat "Really close all windows in this frame except"
+  (buffer-name) "? "))
+  (delete-other-windows))))
+
 ;; move buffers between windows
 (use-package buffer-move
   :config
