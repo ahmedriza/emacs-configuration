@@ -152,7 +152,7 @@
   :defer 2
   :bind ("C-c r" . hydra-rust/body))
 
-(defhydra hydra-rust (:color blue)
+(defhydra hydra-rust (:color blue :hint nil)
     "
     ^
     ^Rust^              ^Do^
