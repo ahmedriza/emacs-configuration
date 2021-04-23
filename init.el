@@ -54,7 +54,10 @@
 
 ;; https://github.com/redguardtoo/find-file-in-project
 (use-package find-file-in-project
-  :ensure)
+  :ensure
+  :config
+  (global-set-key (kbd "C-c f") 'find-file-in-project)
+  )
 
 ;; ------------------ doom mode line -----------------------------
 
