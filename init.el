@@ -19,16 +19,11 @@
 
 ;; open buffers in read-only mode by default
 ;; toggle with C-x C-q
-(add-hook 'find-file-hook (lambda () (setq buffer-read-only t)))
+;; (add-hook 'find-file-hook (lambda () (setq buffer-read-only t)))
 
 ;; (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 (global-display-fill-column-indicator-mode)
 (setq-default display-fill-column-indicator-column 100)
-;; (setq display-fill-column-indicator-character ?\N{U+2506})
-;; (setq-default display-fill-column-indicator-character ?\N{U+2506})
-;; (setq-default display-fill-column-indicator-character ?\N{U+250A})
-;; (setq-default display-fill-column-indicator-character ?\N{U+254E})
-;; (customize-face 'fill-column-indicator)
 
 (defun indent-buffer ()
   (interactive)
@@ -55,6 +50,14 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+;; ----------------------------- find-files ----------------------
+
+;; https://github.com/redguardtoo/find-file-in-project
+(use-package find-file-in-project
+  :ensure)
+
+;; ------------------ some global configs -------------------------
+
 ;; move buffers between windows
 (use-package buffer-move
   :config
@@ -66,6 +69,7 @@
 
 ;; Which-key to get hints when typing command prefixes
 (use-package which-key
+  :ensure
   :diminish
   :config
   ;; Allow C-h to trigger which-key before it is done automatically
@@ -103,8 +107,6 @@
 (use-package flycheck
   :init (global-flycheck-mode))
 
-
-;; lsp-mode supports snippets, but in order for them to work you need to use yasnippet
 ;; If you don't want to use snippets set lsp-enable-snippet to nil in your lsp-mode settings
 ;;   to avoid odd behavior with snippets and indentation
 (use-package yasnippet)
@@ -127,6 +129,8 @@
 (xclip-mode 1)
 
 (setq debug-on-error t)
+
+;; --------------------------------- treemacs -------------------------
 
 (global-set-key [f8] 'treemacs)
 (setq lsp-enable-file-watchers nil)
@@ -278,6 +282,14 @@
 ;; turn off electric-indent-mode in org-mode as it does some really
 ;; weird things to indentation
 (add-hook 'org-mode-hook (lambda () (electric-indent-mode -1)))
+
+(use-package restclient
+  :ensure
+  )
+
+(use-package ob-http
+  :ensure
+  )
 
 ;; active Babel languages
 (org-babel-do-load-languages

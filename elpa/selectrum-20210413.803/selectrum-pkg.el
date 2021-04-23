@@ -1,2 +1,0 @@
-;;; Generated package description from selectrum.el  -*- no-byte-compile: t -*-
-(define-package "selectrum" "20210413.803" "Easily select item from list" '((emacs "26.1")) :commit "d01718e9bbdf385205fb9c713caa64864f249392" :authors '(("Radon Rosborough" . "radon.neon@gmail.com")) :maintainer '("Radon Rosborough" . "radon.neon@gmail.com") :keywords '("extensions") :url "https://github.com/raxod502/selectrum")
