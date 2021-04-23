@@ -143,6 +143,27 @@
 
 (setq debug-on-error t)
 
+;; --------------------------------- hydra ----------------------------
+
+(use-package hydra
+  :ensure
+  :defer 2
+  :bind ("C-c r" . hydra-rust/body))
+
+(defhydra hydra-rust (:color blue)
+    "
+    ^
+    ^Rust^              ^Do^
+    ^─────^─────────────^──^─────────
+    _q_ quit            _f_ format
+    ^^                  _p_ find-file
+    ^^                  ^^
+    "
+    ("q" nil)
+    ("f" rustic-format-buffer)
+    ("p" find-file-in-project)
+    )
+
 ;; --------------------------------- treemacs -------------------------
 
 (global-set-key [f8] 'treemacs)
