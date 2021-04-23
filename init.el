@@ -145,6 +145,8 @@
 
 ;; --------------------------------- hydra ----------------------------
 
+;; see also https://www.reddit.com/r/emacs/comments/8of6tx/tip_how_to_be_a_beast_with_hydra
+
 (use-package hydra
   :ensure
   :defer 2
