@@ -56,6 +56,12 @@
 (use-package find-file-in-project
   :ensure)
 
+;; ------------------ doom mode line -----------------------------
+
+;;(use-package doom-modeline
+;;  :ensure t
+;;  :hook (after-init . doom-modeline-mode))
+
 ;; ------------------ some global configs -------------------------
 
 ;; move buffers between windows
