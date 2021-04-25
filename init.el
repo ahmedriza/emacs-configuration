@@ -164,7 +164,13 @@
 ;;    )
 
 ;; --------------------------------- treemacs -------------------------
-
+;; 
+;; Note that treemacs width is locked by default.
+;; If you want to use a different width here's what you can do:
+;; 
+;; Press w in the treemacs window to set a width for your current session
+;; Press tw in the treemacs window to make the width freely changeable
+;;
 (global-set-key [f8] 'treemacs)
 (setq lsp-enable-file-watchers nil)
 (setq treemacs-no-png-images t)
