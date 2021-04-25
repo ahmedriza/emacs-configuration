@@ -53,20 +53,20 @@
 ;; ----------------------------- find-files ----------------------
 
 ;; https://github.com/redguardtoo/find-file-in-project
-(use-package find-file-in-project
-  :ensure
-  :config
-  (global-set-key (kbd "C-c f") 'find-file-in-project)
-  )
+;;(use-package find-file-in-project
+;;  :ensure
+;;  :config
+;;  (global-set-key (kbd "C-c f") 'find-file-in-project)
+;;  )
 
 ;; ------------------ some global configs -------------------------
 
-(global-set-key (kbd "C-x 1")
-  (lambda ()
-  (interactive)
-  (if (yes-or-no-p (concat "Really close all windows in this frame except"
-  (buffer-name) "? "))
-  (delete-other-windows))))
+;;j(global-set-key (kbd "C-x 1")
+;;  (lambda ()
+;;  (interactive)
+;;  (if (yes-or-no-p (concat "Really close all windows in this frame except"
+;;  (buffer-name) "? "))
+;;  (delete-other-windows))))
 
 ;; move buffers between windows
 (use-package buffer-move
@@ -264,7 +264,6 @@
 (use-package yasnippet
   :ensure
   :config
-  (yas-global-mode 1)
   (yas-reload-all)
   (add-hook 'prog-mode-hook 'yas-minor-mode)
   (add-hook 'text-mode-hook 'yas-minor-mode))
@@ -316,9 +315,6 @@
 
 ;; turn off electric-indent-mode in org-mode as it does some really
 ;; weird things to indentation
-(defun remove-electric-indent-mode ()
-  (electric-indent-local-mode -1))
-(add-hook 'org-mode-hook 'remove-electric-indent-mode)
 ;; (add-hook 'org-mode-hook (lambda () (electric-indent-mode -1)))
 
 (use-package restclient
@@ -338,9 +334,9 @@
 
 ;; ----------------------------- highlights ------------------------
 
-(use-package hl-todo
-  :ensure t
-  :config
-  (define-key hl-todo-mode-map (kbd "C-c p") 'hl-todo-previous)
-  (define-key hl-todo-mode-map (kbd "C-c n") 'hl-todo-next)
-  :hook ((prog-mode . hl-todo-mode)))
+;;(use-package hl-todo
+;;  :ensure t
+;;  :config
+;;  (define-key hl-todo-mode-map (kbd "C-c p") 'hl-todo-previous)
+;;  (define-key hl-todo-mode-map (kbd "C-c n") 'hl-todo-next)
+;;  :hook ((prog-mode . hl-todo-mode)))
