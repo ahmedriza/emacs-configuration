@@ -135,8 +135,8 @@
 (setq frame-resize-pixelwise t)
 (xterm-mouse-mode 1)
 ;; requires the Linux xclip package to be installed
-(use-package xclip)
-(xclip-mode 1)
+;; (use-package xclip :ensure)
+;; (xclip-mode 1)
 
 (setq debug-on-error t)
 
@@ -358,3 +358,12 @@
   )
 
 (require 'ess-site)
+
+;; ----------------------------- ace-window ------------------------
+
+;; https://emacs.stackexchange.com/questions/3458/how-to-switch-between-windows-quickly
+(use-package ace-window
+  :ensure)
+(global-set-key (kbd "C-x o") 'ace-window)
+
+
