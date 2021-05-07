@@ -350,3 +350,11 @@
   (define-key hl-todo-mode-map (kbd "C-c p") 'hl-todo-previous)
   (define-key hl-todo-mode-map (kbd "C-c n") 'hl-todo-next)
   :hook ((prog-mode . hl-todo-mode)))
+
+;; ----------------------------- ess ------------------------
+
+(use-package ess
+  :ensure t
+  )
+
+(require 'ess-site)
