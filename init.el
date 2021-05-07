@@ -353,6 +353,7 @@
 
 ;; ----------------------------- ace-window ------------------------
 
+;; https://emacs.stackexchange.com/questions/3458/how-to-switch-between-windows-quickly
 (use-package ace-window
   :ensure)
 (global-set-key (kbd "C-x o") 'ace-window)
