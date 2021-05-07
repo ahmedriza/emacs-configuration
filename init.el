@@ -350,3 +350,10 @@
   (define-key hl-todo-mode-map (kbd "C-c p") 'hl-todo-previous)
   (define-key hl-todo-mode-map (kbd "C-c n") 'hl-todo-next)
   :hook ((prog-mode . hl-todo-mode)))
+
+;; ----------------------------- ace-window ------------------------
+
+(use-package ace-window
+  :ensure)
+(global-set-key (kbd "C-x o") 'ace-window)
+
