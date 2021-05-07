@@ -16,6 +16,8 @@
 ;; auto close bracket insertion
 (electric-pair-mode 1)
 (column-number-mode t)
+(setq show-paren-delay 0)
+(show-paren-mode 1)
 
 ;; open buffers in read-only mode by default
 ;; toggle with C-x C-q
