@@ -355,11 +355,8 @@
 
 ;; ----------------------------- ess ------------------------
 
-(use-package ess
-  :ensure t
-  )
-
-(require 'ess-site)
+;; (use-package ess :ensure t)
+;; (require 'ess-site)
 
 ;; ----------------------------- ace-window ------------------------
 
