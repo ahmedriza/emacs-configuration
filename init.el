@@ -19,6 +19,11 @@
 (setq show-paren-delay 0)
 (show-paren-mode 1)
 
+;; tramp
+(require 'tramp)
+(setq tramp-default-method "ssh")
+(add-to-list 'tramp-remote-path "/home/ahmed/.cargo/bin")
+
 ;; balance windows after split
 (advice-add 'split-window-right :after #'balance-windows)
 
@@ -180,7 +185,11 @@
 (setq lsp-enable-file-watchers nil)
 (setq treemacs-no-png-images t)
 ;; (setq treemacs-toggle-fixed-width t)
-(setq treemacs-width 55)
+
+(if (string= (system-name) "precision.onedigit.org")
+  (setq treemacs-width 35)
+  (setq treemacs-width 55)
+  )
 (when window-system
   (use-package treemacs
   :config
@@ -256,6 +265,28 @@
   :config
   (add-hook 'lsp-mode-hook 'lsp-ui-mode)
   )
+
+;; Support for running rust-analyzer on remote files. For example
+;; if a remote file is loaded into emacs by 
+;; C-x-f /ssh:ahmed@tr:/home/ahmed/Work/rust/store-rust/db-client/src/db_clint.rs
+;; then emacs will start a remote rust-analyzer.
+;; Note that CARGO_HOME and RUSTUP_HOME must be setup correctly on the remote 
+;; machine for this to work.
+(with-eval-after-load "lsp-rust"
+  (lsp-register-client
+   (make-lsp-client
+    :new-connection (lsp-tramp-connection "/home/ahmed/.cargo/bin/rust-analyzer")
+    :remote? t
+    :major-modes '(rust-mode rustic-mode)
+    :initialization-options 'lsp-rust-analyzer--make-init-options
+    :notification-handlers (ht<-alist lsp-rust-notification-handlers)
+    :action-handlers (ht ("rust-analyzer.runSingle" #'lsp-rust--analyzer-run-single))
+    :library-folders-fn (lambda (_workspace) lsp-rust-library-directories)
+    :after-open-fn (lambda ()
+                     (when lsp-rust-analyzer-server-display-inlay-hints
+                       (lsp-rust-analyzer-inlay-hints-mode)))
+    :ignore-messages nil
+    :server-id 'rust-analyzer-remote)))
 
 ; (use-package lsp-ui)
 (use-package lsp-ui
