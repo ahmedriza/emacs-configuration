@@ -19,6 +19,9 @@
 (setq show-paren-delay 0)
 (show-paren-mode 1)
 
+;; tabs are evil
+(setq-default indent-tabs-mode nil)
+
 ;; tramp
 (require 'tramp)
 (setq tramp-default-method "ssh")
