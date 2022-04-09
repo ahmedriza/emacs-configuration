@@ -264,6 +264,9 @@
   ;; (lsp-eldoc-render-all nil)
   ;; (lsp-idle-delay 0.6)
   ;; (lsp-rust-analyzer-server-display-inlay-hints nil)
+  ;; for the following two, see https://users.rust-lang.org/t/how-to-disable-rust-analyzer-proc-macro-warnings-in-neovim/53150/6
+  (lsp-rust-analyzer-proc-macro-enable t)
+  (lsp-rust-analyzer-cargo-load-out-dirs-from-check t)
   (lsp-headerline-breadcrumb-enable nil)
   :config
   (add-hook 'lsp-mode-hook 'lsp-ui-mode)
@@ -402,4 +405,6 @@
   :ensure)
 (global-set-key (kbd "C-x o") 'ace-window)
 
-
+;; ---------------- Golang -------------------------
+;; https://github.com/dominikh/go-mode.el
+(add-hook 'go-mode-hook 'lsp-deferred)
