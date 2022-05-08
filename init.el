@@ -408,3 +408,8 @@
 ;; ---------------- Golang -------------------------
 ;; https://github.com/dominikh/go-mode.el
 (add-hook 'go-mode-hook 'lsp-deferred)
+
+;; ------------- Ron format ------------------------
+(require 'ron-mode)
+(add-to-list 'auto-mode-alist '("\\.ron" . ron-mode))
+
