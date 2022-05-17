@@ -134,6 +134,8 @@
 ;;   to avoid odd behavior with snippets and indentation
 (use-package yasnippet)
 
+(dap-mode 0)
+(dap-ui-mode 0)
 ;; Use the Debug Adapter Protocol for running tests and debugging
 ;;(use-package posframe
 ;;  ;; Posframe is a pop-up tool that must be manually installed for dap-mode
