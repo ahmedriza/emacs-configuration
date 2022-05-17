@@ -135,14 +135,14 @@
 (use-package yasnippet)
 
 ;; Use the Debug Adapter Protocol for running tests and debugging
-(use-package posframe
-  ;; Posframe is a pop-up tool that must be manually installed for dap-mode
-  )
-(use-package dap-mode
-  :hook
-  (lsp-mode . dap-mode)
-  (lsp-mode . dap-ui-mode)
-  )
+;;(use-package posframe
+;;  ;; Posframe is a pop-up tool that must be manually installed for dap-mode
+;;  )
+;;(use-package dap-mode
+;;  :hook
+;;  (lsp-mode . dap-mode)
+;;  (lsp-mode . dap-ui-mode)
+;;  )
 
 (global-display-line-numbers-mode)
 (setq frame-resize-pixelwise t)
@@ -259,7 +259,7 @@
   (lsp-ui-imenu-auto-refresh t)
   (lsp-ui-imenu-window-width 200)
   (lsp-ui-sideline-show-code-actions nil)
-  ;; (lsp-eldoc-enable-hover nil)
+  (lsp-eldoc-enable-hover nil)
   (lsp-signature-render-documentation nil)
   ;; (lsp-eldoc-render-all nil)
   ;; (lsp-idle-delay 0.6)
@@ -303,9 +303,9 @@
   :ensure
   :commands lsp-ui-mode
   ;; :custom
-  ;; (lsp-ui-peek-always-show nil)
-  ;; (lsp-ui-sideline-show-hover nil)
-  ;; (lsp-ui-doc-enable nil)
+  ;;(lsp-ui-peek-always-show nil)
+  ;;(lsp-ui-sideline-show-hover nil)
+  ;;(lsp-ui-doc-enable nil)
   )
 
 (use-package helm-lsp
