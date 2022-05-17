@@ -268,6 +268,10 @@
   (lsp-rust-analyzer-proc-macro-enable t)
   (lsp-rust-analyzer-cargo-load-out-dirs-from-check t)
   (lsp-headerline-breadcrumb-enable nil)
+  ;;
+  ;; See https://github.com/rust-lang/rust-analyzer/issues/12184 
+  ;; https://github.com/rust-lang/rust-analyzer/issues/11815
+  (lsp-rust-analyzer-diagnostics-disabled ["type-mismatch"])
   :config
   (add-hook 'lsp-mode-hook 'lsp-ui-mode)
   )
