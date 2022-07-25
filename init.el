@@ -192,7 +192,7 @@
 ;; (setq treemacs-toggle-fixed-width t)
 
 (if (string= (system-name) "precision.onedigit.org")
-  (setq treemacs-width 35)
+  (setq treemacs-width 55)
   (setq treemacs-width 55)
   )
 (when window-system
