@@ -416,6 +416,7 @@
 (add-hook 'go-mode-hook 'lsp-deferred)
 
 ;; ------------- Ron format ------------------------
-(require 'ron-mode)
+;; (require 'ron-mode)
+(use-package ron-mode :ensure t)
 (add-to-list 'auto-mode-alist '("\\.ron" . ron-mode))
 
