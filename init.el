@@ -191,7 +191,7 @@
 (setq treemacs-no-png-images t)
 ;; (setq treemacs-toggle-fixed-width t)
 
-(if (string= (system-name) "precision-5770")
+(if (string= (system-name) "precision-5770.onedigit.org")
   (setq treemacs-width 45)
   (setq treemacs-width 55)
   )
