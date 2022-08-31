@@ -421,5 +421,5 @@
 (add-to-list 'auto-mode-alist '("\\.ron" . ron-mode))
 
 ;; see https://emacsredux.com/blog/2021/12/19/using-emacs-on-windows-11-with-wsl2/
-(pixel-scroll-precision-mode)
+;; (pixel-scroll-precision-mode)
 
