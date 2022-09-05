@@ -188,6 +188,7 @@
 ;;
 (global-set-key [f8] 'treemacs)
 (setq lsp-enable-file-watchers nil)
+(setq lsp-lens-enable nil)
 (setq treemacs-no-png-images t)
 ;; (setq treemacs-toggle-fixed-width t)
 
