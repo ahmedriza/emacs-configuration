@@ -424,3 +424,6 @@
 ;; see https://emacsredux.com/blog/2021/12/19/using-emacs-on-windows-11-with-wsl2/
 ;; (pixel-scroll-precision-mode)
 
+;; Run a python buffer
+;; see https://stackoverflow.com/questions/28036917/emacs-running-current-file-in-python
+(global-set-key (kbd "<f7>") (kbd "C-u C-c C-c"))
