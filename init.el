@@ -199,6 +199,8 @@
 (when window-system
   (use-package treemacs
   :config
+  (progn
+        (treemacs-follow-mode -1))
   (set-face-attribute 'treemacs-root-face nil
                         :foreground (face-attribute 'default :foreground)
                         :height 1.0
