@@ -1,4 +1,4 @@
-;;; ron-mode-autoloads.el --- automatically extracted autoloads
+;;; ron-mode-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -9,7 +9,7 @@
 ;;;### (autoloads nil "ron-mode" "ron-mode.el" (0 0 0 0))
 ;;; Generated autoloads from ron-mode.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ron-mode" '("ron-")))
+(register-definition-prefixes "ron-mode" '("ron-"))
 
 ;;;***
 

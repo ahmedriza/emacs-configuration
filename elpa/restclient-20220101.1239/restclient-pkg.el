@@ -1,2 +1,2 @@
 ;;; Generated package description from restclient.el  -*- no-byte-compile: t -*-
-(define-package "restclient" "20220101.1239" "An interactive HTTP client for Emacs" 'nil :commit "ae79e7dd283890072da69b8f48aeec1afd0d9442" :authors '(("Pavel Kurnosov" . "pashky@gmail.com")) :maintainer '("Pavel Kurnosov" . "pashky@gmail.com") :keywords '("http"))
+(define-package "restclient" "20220101.1239" "An interactive HTTP client for Emacs" 'nil :commit "9e2cfa86529133eba6c9ef53794be182f15e4c21" :authors '(("Pavel Kurnosov" . "pashky@gmail.com")) :maintainer '("Pavel Kurnosov" . "pashky@gmail.com") :keywords '("http"))
