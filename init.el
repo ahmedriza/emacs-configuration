@@ -429,3 +429,4 @@
 ;; Run a python buffer
 ;; see https://stackoverflow.com/questions/28036917/emacs-running-current-file-in-python
 (global-set-key (kbd "<f7>") (kbd "C-u C-c C-c"))
+(put 'upcase-region 'disabled nil)
