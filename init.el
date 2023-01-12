@@ -1,3 +1,30 @@
+;;
+;;
+;; Ensure required packages are installed
+(defun ensure-package-installed (&rest packages)
+  "Assure every package is installed, ask for installation if it’s not.
+
+Return a list of installed packages or nil for every skipped package."
+  (mapcar
+   (lambda (package)
+     ;; (package-installed-p 'evil)
+     (if (package-installed-p package)
+         nil
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+           (package-install package)
+         package)))
+   packages))
+
+;; make sure to have downloaded archive description.
+;; Or use package-archive-contents as suggested by Nicolas Dudebout
+(or (file-exists-p package-user-dir)
+    (package-refresh-contents))
+
+;; (ensure-package-installed 'iedit) ;  --> (nil nil) if iedit and magit are already installed
+;;
+;;
+;;
+
 ;;; package --- Summary
 ;;; init.el
 ;;; Commentary:
@@ -47,10 +74,37 @@
 (require 'package)
 ;; Add melpa to your packages repositories
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+;;
+;;
+;; Ensure required packages are installed
+(defun ensure-package-installed (&rest packages)
+  "Assure every package is installed, ask for installation if it’s not.
+
+Return a list of installed packages or nil for every skipped package."
+  (mapcar
+   (lambda (package)
+     ;; (package-installed-p 'evil)
+     (if (package-installed-p package)
+         nil
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+           (package-install package)
+         package)))
+   packages))
+
+;; make sure to have downloaded archive description.
+;; Or use package-archive-contents as suggested by Nicolas Dudebout
+(or (file-exists-p package-user-dir)
+    (package-refresh-contents))
+
+;; (ensure-package-installed 'iedit) ;  --> (nil nil) if iedit and magit are already installed
+;;
+;;
+;;
+
 (package-initialize)
 
-(unless package-archive-contents
-  (package-refresh-contents))
+(unless package-archive-contents (package-refresh-contents))
 
 ;; Use-package for civilized configuration
 (unless (package-installed-p 'use-package)
@@ -430,3 +484,19 @@
 ;; see https://stackoverflow.com/questions/28036917/emacs-running-current-file-in-python
 (global-set-key (kbd "<f7>") (kbd "C-u C-c C-c"))
 (put 'upcase-region 'disabled nil)
+
+;; --------------------- C/C++ --------------------
+;; https://tuhdo.github.io/c-ide.html
+;; https://github.com/tuhdo/emacs-c-ide-demo
+;;
+(add-to-list 'load-path "~/.emacs.d/custom")
+(require 'setup-general)
+(if (version< emacs-version "24.4")
+    (require 'setup-ivy-counsel)
+  (require 'setup-helm)
+  (require 'setup-helm-gtags))
+;; (require 'setup-ggtags)
+(require 'setup-cedet)
+(require 'setup-editing)
+(require 'setup-treemacs)
+;;-------------------------------------------------
