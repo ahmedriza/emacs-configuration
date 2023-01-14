@@ -49,6 +49,9 @@ Return a list of installed packages or nil for every skipped package."
 ;; tabs are evil
 (setq-default indent-tabs-mode nil)
 
+;; do not leave undo history files
+(setq undo-tree-auto-save-history nil)
+
 ;; tramp
 (require 'tramp)
 (setq tramp-default-method "ssh")
