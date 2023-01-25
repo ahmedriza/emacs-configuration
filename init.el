@@ -492,14 +492,14 @@ Return a list of installed packages or nil for every skipped package."
 ;; https://tuhdo.github.io/c-ide.html
 ;; https://github.com/tuhdo/emacs-c-ide-demo
 ;;
-(add-to-list 'load-path "~/.emacs.d/custom")
-(require 'setup-general)
-(if (version< emacs-version "24.4")
-    (require 'setup-ivy-counsel)
-  (require 'setup-helm)
-  (require 'setup-helm-gtags))
-;; (require 'setup-ggtags)
-(require 'setup-cedet)
-(require 'setup-editing)
-(require 'setup-treemacs)
+;;(add-to-list 'load-path "~/.emacs.d/custom")
+;;(require 'setup-general)
+;;(if (version< emacs-version "24.4")
+;;    (require 'setup-ivy-counsel)
+;;  (require 'setup-helm)
+;;  (require 'setup-helm-gtags))
+;;;; (require 'setup-ggtags)
+;;(require 'setup-cedet)
+;;(require 'setup-editing)
+;;(require 'setup-treemacs)
 ;;-------------------------------------------------
