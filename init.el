@@ -278,8 +278,8 @@ Return a list of installed packages or nil for every skipped package."
 ;; ----------------------------- fonts -----------------------
 
 (cond
- ((member "Monaco" (font-family-list))
-  (set-face-attribute 'default nil :font "Monaco-11")) ((member "Inconsolata" (font-family-list))
+ ((member "Menlo" (font-family-list))
+  (set-face-attribute 'default nil :font "Menlo-12")) ((member "Inconsolata" (font-family-list))
   (set-face-attribute 'default nil :font "Inconsolata-11")) ((member "Consolas" (font-family-list))
   (set-face-attribute 'default nil :font "Consolas-10")) ((member "DejaVu Sans Mono" (font-family-list))
   (set-face-attribute 'default nil :font "DejaVu Sans Mono-9")))
