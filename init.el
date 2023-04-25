@@ -519,3 +519,6 @@ Return a list of installed packages or nil for every skipped package."
 ;;  (define-key haskell-mode-map (kbd "C-c C-n C-c") 'haskell-process-cabal-build)
 ;;  (define-key haskell-mode-map (kbd "C-c C-n c") 'haskell-process-cabal)))
 
+;; workaround for a bug in Emacs 28
+;; https://emacs.stackexchange.com/questions/74289/emacs-28-2-error-in-macos-ventura-image-type-invalid-image-type-svg
+(add-to-list 'image-types 'svg)
