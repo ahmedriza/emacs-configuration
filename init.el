@@ -505,17 +505,17 @@ Return a list of installed packages or nil for every skipped package."
 ;;-------------------------------------------------
 
 ;; Haskell
-(require 'lsp)
-(require 'lsp-haskell)
-;; Hooks so haskell and literate haskell major modes trigger LSP setup
-(add-hook 'haskell-mode-hook #'lsp)
-(add-hook 'haskell-literate-mode-hook #'lsp)
 ;; https://github.com/serras/emacs-haskell-tutorial/blob/master/tutorial.md
-(eval-after-load 'haskell-mode '(progn
-  (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
-  (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
-  (define-key haskell-mode-map (kbd "C-c C-n C-t") 'haskell-process-do-type)
-  (define-key haskell-mode-map (kbd "C-c C-n C-i") 'haskell-process-do-info)
-  (define-key haskell-mode-map (kbd "C-c C-n C-c") 'haskell-process-cabal-build)
-  (define-key haskell-mode-map (kbd "C-c C-n c") 'haskell-process-cabal)))
+;; Hooks so haskell and literate haskell major modes trigger LSP setup
+;;(require 'lsp)
+;;(require 'lsp-haskell)
+;;(add-hook 'haskell-mode-hook #'lsp)
+;;(add-hook 'haskell-literate-mode-hook #'lsp)
+;;(eval-after-load 'haskell-mode '(progn
+;;  (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
+;;  (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
+;;  (define-key haskell-mode-map (kbd "C-c C-n C-t") 'haskell-process-do-type)
+;;  (define-key haskell-mode-map (kbd "C-c C-n C-i") 'haskell-process-do-info)
+;;  (define-key haskell-mode-map (kbd "C-c C-n C-c") 'haskell-process-cabal-build)
+;;  (define-key haskell-mode-map (kbd "C-c C-n c") 'haskell-process-cabal)))
 
