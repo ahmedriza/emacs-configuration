@@ -522,3 +522,10 @@ Return a list of installed packages or nil for every skipped package."
 ;; workaround for a bug in Emacs 28
 ;; https://emacs.stackexchange.com/questions/74289/emacs-28-2-error-in-macos-ventura-image-type-invalid-image-type-svg
 (add-to-list 'image-types 'svg)
+
+;; Mac customistaions
+;;; I prefer cmd key for meta
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'none)
