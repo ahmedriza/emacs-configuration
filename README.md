@@ -16,3 +16,9 @@ Look for the following in the elpa/lsp-java-XXX/lsp-java.el file. Here's what I 
 ```
 
 Change the download URL to the desired version.  Remove the `lsp-java.elc` file in order to force emacs to recompile the file.
+
+Note that the Language Server will be installed in the location specified by `lsp-java-server-install-dir`. Example:
+
+```
+(setq lsp-java-server-install-dir "/Users/ahmed/Downloads/jdtls/")
+```
