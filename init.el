@@ -523,6 +523,30 @@ Return a list of installed packages or nil for every skipped package."
 ;; https://emacs.stackexchange.com/questions/74289/emacs-28-2-error-in-macos-ventura-image-type-invalid-image-type-svg
 (add-to-list 'image-types 'svg)
 
+;; ----------------------------- java config -----------------------
+;; See also
+;; https://github.com/emacs-lsp/lsp-java
+;; From vanilla Emacs to Java IDE in 5 minutes - https://www.youtube.com/watch?v=Yah69AfYP34
+
+(setq lsp-java-server-install-dir "/Users/ahmed/Downloads/jdtls/")
+
+(use-package projectile)
+(use-package flycheck)
+(use-package yasnippet :config (yas-global-mode))
+(use-package lsp-mode :ensure t :hook ((lsp-mode . lsp-enable-which-key-integration)))
+(use-package hydra)
+(use-package company)
+(use-package lsp-ui)
+(use-package which-key :config (which-key-mode))
+(use-package lsp-java :ensure t :config (add-hook 'java-mode-hook 'lsp))
+(use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
+(use-package dap-java :ensure nil)
+(use-package helm-lsp)
+(use-package helm :config (helm-mode))
+(use-package lsp-treemacs)
+
+;; ----------------------------- end java config -----------------------
+
 ;; Mac customistaions
 ;;; I prefer cmd key for meta
 (setq mac-option-key-is-meta nil
