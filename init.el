@@ -336,6 +336,10 @@ Return a list of installed packages or nil for every skipped package."
   (lsp-rust-analyzer-diagnostics-disabled ["type-mismatch"])
   :config
   (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+  (global-set-key [f12] 'lsp-format-buffer)
+  :hook (
+    (lsp-mode . lsp-enable-which-key-integration)
+    (java-mode . #'lsp-deferred))
   )
 
 ;; Support for running rust-analyzer on remote files. For example
@@ -543,7 +547,7 @@ Return a list of installed packages or nil for every skipped package."
   :init
   :config (
     add-hook 'java-mode-hook 'lsp
-    ;; (setq lsp-java-format-settings-url (lsp--path-to-uri "/work/emacs-configuration/eclipse-java-google-style.xml"))
+    (setq lsp-java-format-settings-url (lsp--path-to-uri "/work/emacs-configuration/eclipse-java-google-style.xml"))
   )
 )
 ;; (use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
