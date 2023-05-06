@@ -2,6 +2,16 @@
 
 This configuration includes support for Rust and Java development.
 
+# Rust
+
+Rust development with emacs is very pleasant indeed.
+
+F12 is bound to `rustic-format-buffer`
+
+```
+(global-set-key [f12] 'rustic-format-buffer)
+```
+
 # Java Language Server
 
 See https://github.com/emacs-lsp/lsp-java
@@ -31,7 +41,18 @@ Import project into Eclipse and go to
 
 Properties > Java Code Style > Formatter 
 
-and create a new formatting.  The formatting rules will be written to `.settings/org.eclipse.jdt.core.prefs`
+and create a new formatting.  The formatting rules will be written to `.settings/org.eclipse.jdt.core.prefs`.
+
+Alternatively, download a code formatting XML file such as the Google formatter and that can be used by adding to the `lsp-java` config:
+
+(use-package lsp-java
+  :ensure t
+  :init
+  :config (
+    add-hook 'java-mode-hook 'lsp
+    (setq lsp-java-format-settings-url (lsp--path-to-uri "/work/emacs-configuration/eclipse-java-google-style.xml"))
+  )
+)
 
 F12 and F9 are bound to `lsp-format-buffer` and `lsp-organize-imports` respectively:
 
