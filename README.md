@@ -22,3 +22,13 @@ Note that the Language Server will be installed in the location specified by `ls
 ```
 (setq lsp-java-server-install-dir "/Users/ahmed/Downloads/jdtls/")
 ```
+
+# Java Code Formatting
+
+See https://github.com/redhat-developer/vscode-java/wiki/Formatter-settings
+
+Import project into Eclipse and go to 
+
+Properties > Java Code Style > Formatter 
+
+and create a new formatting.  The formatting rules will be written to `.settings/org.eclipse.jdt.core.prefs`

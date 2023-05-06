@@ -531,19 +531,32 @@ Return a list of installed packages or nil for every skipped package."
 (setq lsp-java-server-install-dir "/Users/ahmed/Downloads/jdtls/")
 
 (use-package projectile)
-(use-package flycheck)
-(use-package yasnippet :config (yas-global-mode))
-(use-package lsp-mode :ensure t :hook ((lsp-mode . lsp-enable-which-key-integration)))
-(use-package hydra)
-(use-package company)
-(use-package lsp-ui)
-(use-package which-key :config (which-key-mode))
-(use-package lsp-java :ensure t :config (add-hook 'java-mode-hook 'lsp))
-(use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
-(use-package dap-java :ensure nil)
-(use-package helm-lsp)
-(use-package helm :config (helm-mode))
-(use-package lsp-treemacs)
+;; (use-package flycheck)
+;; (use-package yasnippet :config (yas-global-mode))
+;; (use-package lsp-mode :ensure t :hook ((lsp-mode . lsp-enable-which-key-integration)))
+;; (use-package hydra)
+;; (use-package company)
+;; (use-package lsp-ui)
+;; (use-package which-key :config (which-key-mode))
+(use-package lsp-java 
+  :ensure t 
+  :init
+  :config (
+    add-hook 'java-mode-hook 'lsp
+    ;; (setq lsp-java-format-settings-url (lsp--path-to-uri "/work/emacs-configuration/eclipse-java-google-style.xml"))
+  )
+)
+;; (use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
+;; (use-package dap-java :ensure nil)
+;; (use-package helm-lsp)
+;; (use-package helm :config (helm-mode))
+;; (use-package lsp-treemacs)
+
+;; use C-c C-o to set offset
+;; use C-c C-s to show syntactic information (show the variable that needs to be set)
+(add-hook 'java-mode-hook (lambda ()
+                            (display-line-numbers-mode 1)
+                            ))
 
 ;; ----------------------------- end java config -----------------------
 
