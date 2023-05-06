@@ -337,6 +337,7 @@ Return a list of installed packages or nil for every skipped package."
   :config
   (add-hook 'lsp-mode-hook 'lsp-ui-mode)
   (global-set-key [f12] 'lsp-format-buffer)
+  (global-set-key [f9] 'lsp-organize-imports)
   :hook (
     (lsp-mode . lsp-enable-which-key-integration)
     (java-mode . #'lsp-deferred))
