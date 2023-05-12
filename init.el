@@ -575,3 +575,10 @@ Return a list of installed packages or nil for every skipped package."
       mac-command-key-is-meta t
       mac-command-modifier 'meta
       mac-option-modifier 'none)
+
+
+;; ------------ python -------------------------------------------------
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
