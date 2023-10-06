@@ -9,7 +9,7 @@
  '(inhibit-startup-screen t)
  '(lsp-rust-analyzer-cargo-run-build-scripts t nil nil "Customized with use-package lsp-mode")
  '(package-selected-packages
-   '(elpy ron-mode ob-http restclient lsp-mode treemacs terraform-mode leetcode find-file-in-project hl-todo markdown-mode+ ox-hugo buffer-move selectrum magit toml-mode company helm-lsp lsp-ui rustic xclip dap-mode posframe yasnippet flycheck which-key use-package))
+   '(yaml-mode elpy ron-mode ob-http restclient lsp-mode treemacs terraform-mode leetcode find-file-in-project hl-todo markdown-mode+ ox-hugo buffer-move selectrum magit toml-mode company helm-lsp lsp-ui rustic xclip dap-mode posframe yasnippet flycheck which-key use-package))
  '(tool-bar-mode nil)
  '(warning-suppress-types '((comp) (comp) (comp) (comp) (comp))))
 (custom-set-faces

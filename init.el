@@ -582,3 +582,7 @@ Return a list of installed packages or nil for every skipped package."
   :ensure t
   :init
   (elpy-enable))
+
+;; Julia
+(package-install 'julia-mode)
+(require 'julia-mode)
