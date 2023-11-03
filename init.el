@@ -584,5 +584,30 @@ Return a list of installed packages or nil for every skipped package."
   (elpy-enable))
 
 ;; Julia
-(package-install 'julia-mode)
-(require 'julia-mode)
+;; (package-install 'julia-mode)
+;; (require 'julia-mode)
+(use-package vterm
+    :ensure t)
+(use-package julia-mode
+  :ensure t)
+(use-package julia-repl
+  :ensure t
+  :hook (julia-mode . julia-repl-mode)
+  :init
+  (setenv "JULIA_NUM_THREADS" "8")
+  :config
+  ;; Set the terminal backend
+  (julia-repl-set-terminal-backend 'vterm))
+
+;; C++
+;; https://emacs-lsp.github.io/lsp-mode/tutorials/CPP-guide/
+;;
+;; Generate compile_commands.json. 
+;; If using Bazel see: https://github.com/hedronvision/bazel-compile-commands-extractor
+;;
+(which-key-mode)
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
+;; https://clang.llvm.org/docs/ClangFormat.html
+(load "/opt/homebrew/Cellar/clang-format/17.0.4/share/clang/clang-format.el")
+(global-set-key [C-M-tab] 'clang-format-region)
